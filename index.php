@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>Kitap Yurdu En Çok Satılan Kitaplar</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -15,6 +15,43 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+
+
+					    @media only screen and (max-width: 600px) {
+
+					    body {
+					        background-color: rgba(76, 175, 80, 0.1);
+					    }
+
+					    .xt{
+			         	     min-width: 100%;max-width: 100%; margin-bottom: 20px;
+		      	        }  
+
+		      	        .xc{
+				      	        	padding:10px; max-height: 300px; width: 250px;margin: auto;
+				      	    }
+
+
+					  }
+
+		                 @media only screen and (min-width: 600px) {
+							  .xt{
+					         	min-width: 22%;max-width: 22%; min-height:450px;max-height:450px; margin-bottom:60px;margin-left: 30px;
+				      	        }  
+
+
+				      	        .xc{
+				      	        	    margin: auto;
+									    padding: 28px;
+									    max-height: 300px;
+									    width: 236px;
+				      	        }
+							}
+					    	
+			
+    </style>
 </head>
 
 
@@ -129,19 +166,19 @@ for ($i=1; $i <= 5; $i++) {
 
 
                         <!-- Grid column -->
-                            <div class="mx-4"  style="min-width: 20%;max-width: 20%; min-height:450px;max-height:450px; margin-bottom: 70px">
+                            <div class="xt"  >
 
                               <!-- Card -->
                               <div class="card card-personal">
 
                                 <!-- Card image-->
-                                <img class="card-img-top"  style="padding:20px; max-height: 280px" src="<?=$img;?>" alt="Card image cap">
+                                <img class="card-img-top xc"  src="<?=$img;?>" alt="Card image cap">
                                 <!-- Card image-->
 
                                 <!-- Card content -->
                                 <div class="card-body">
                                   <!-- Title-->
-                                  <a href="kitapdetay.php?link=<?=base64_encode($link)?>&resim=<?=$img;?>"><h4 class="card-title title-one"><?=substr($title,0,50); ?></h4></a> 
+                                  <a href="kitapdetay.php?link=<?=base64_encode($link)?>&resim=<?=$img;?>"><h4 class="card-title title-one"><?=mb_substr($title,0,50); ?></h4></a> 
                                   <p class="card-meta">Yazar: <?=mb_substr($yazar,0,100);?></p>
                                   <hr>
                                   <a class="card-meta"><span><i class="fa fa-angellist"></i> ₺ <?php echo $fiyat; ?> </span></a>
